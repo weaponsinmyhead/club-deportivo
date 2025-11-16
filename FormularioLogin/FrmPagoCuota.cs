@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FormularioLogin
 {
@@ -122,17 +123,16 @@ namespace FormularioLogin
 								  MessageBoxButtons.OK, MessageBoxIcon.Information);
 					if (infoCarnet.EsPrimeraCuota)
 					{
-						FrmCarnetSocio frmCarnetSocio = new FrmCarnetSocio(this);
-
-						frmCarnetSocio.Show();
+						FrmCarnetSocio frmCarnetSocio = new FrmCarnetSocio(_persona, infoCarnet.NumeroCarnet ,this);
 						this.Hide();
+						frmCarnetSocio.Show();
+						
 					}
 					else
 					{
 						FormInicio.Show();
 						this.Close();
 					}
-
 				}
 				else
 				{
@@ -141,8 +141,6 @@ namespace FormularioLogin
 				}
 			}
 		}
-
-
 
 
 		//METODOS
@@ -180,7 +178,9 @@ namespace FormularioLogin
 						Nombre = persona["nombre"].ToString(),
 						Apellido = persona["apellido"].ToString(),
 						Dni = persona["dni"].ToString(),
-						CreateTime = Convert.ToDateTime(persona["create_time"])
+						CreateTime = Convert.ToDateTime(persona["create_time"]),
+						FechaNac = Convert.ToDateTime(persona["fecha_nac"]),
+						Email= persona["email"].ToString(),
 
 					};
 				}

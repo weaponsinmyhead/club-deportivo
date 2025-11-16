@@ -47,7 +47,7 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "SISTEMA CLUB DEPORTIVO";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.label1.Click += new System.EventHandler(this.label1_Click);
+	
 			// 
 			// Registro
 			// 
@@ -77,7 +77,7 @@
 			this.activ.TabIndex = 3;
 			this.activ.Text = "INSCRIPCIÓN ACTIVIDAD";
 			this.activ.UseVisualStyleBackColor = true;
-			this.activ.Click += new System.EventHandler(this.activ_Click);
+	
 			// 
 			// asistencias
 			// 
@@ -96,7 +96,7 @@
 			this.vcuotas.TabIndex = 5;
 			this.vcuotas.Text = "VERIFICACIÓN CUOTAS";
 			this.vcuotas.UseVisualStyleBackColor = true;
-			this.vcuotas.Click += new System.EventHandler(this.vcuotas_Click);
+	
 			// 
 			// cuotasven
 			// 
@@ -122,7 +122,7 @@
 			this.Controls.Add(this.label1);
 			this.Name = "FrmInicio";
 			this.Text = "Form1";
-			this.Load += new System.EventHandler(this.FrmInicio_Load);
+
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

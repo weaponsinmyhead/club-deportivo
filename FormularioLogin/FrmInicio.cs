@@ -17,10 +17,6 @@ namespace FormularioLogin
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -29,10 +25,7 @@ namespace FormularioLogin
             this.Hide();
         }
 
-        private void FrmInicio_Load(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void pcuota_Click(object sender, EventArgs e)
         {
@@ -41,14 +34,7 @@ namespace FormularioLogin
 			this.Hide();
 		}
 
-		private void vcuotas_Click(object sender, EventArgs e)
-		{
+	
 
-		}
-
-		private void activ_Click(object sender, EventArgs e)
-		{
-
-		}
 	}
 }
