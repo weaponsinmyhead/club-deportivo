@@ -53,7 +53,9 @@ namespace FormularioLogin
 			FormLogin.Show();
 		}
 
+        private void picLogo_Click(object sender, EventArgs e)
+        {
 
-
-	}
+        }
+    }
 }

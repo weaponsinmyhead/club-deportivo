@@ -167,7 +167,7 @@
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picLogo.Image = global::FormularioLogin.Properties.Resources.ClubDepPic;
-            this.picLogo.Location = new System.Drawing.Point(15, 53);
+            this.picLogo.Location = new System.Drawing.Point(15, 56);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(197, 208);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
