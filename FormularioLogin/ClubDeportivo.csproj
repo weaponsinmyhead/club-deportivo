@@ -248,6 +248,12 @@
     <Compile Include="Configurations\AppConfiguration.cs" />
     <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="Data\DBScriptsCreate.cs" />
+    <Compile Include="FrmBaseDeDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaseDeDatos.Designer.cs">
+      <DependentUpon>FrmBaseDeDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCarnetSocio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBaseDeDatos.resx">
+      <DependentUpon>FrmBaseDeDatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCarnetSocio.resx">
       <DependentUpon>FrmCarnetSocio.cs</DependentUpon>
     </EmbeddedResource>
