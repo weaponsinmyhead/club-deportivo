@@ -36,10 +36,27 @@ namespace FormularioLogin
 			this.Hide();
 		}
 
-		private void btnSalir_Click(object sender, EventArgs e)
+		private void vcuotas_Click(object sender, EventArgs e)
+		{
+            FrmConsultarCuota frmConsultarCuota = new FrmConsultarCuota(this);
+            frmConsultarCuota.Show();
+            this.Hide();
+        }
+
+		private void activ_Click(object sender, EventArgs e)
 		{
             this.Close();
             FormLogin.Show();
 		}
 	}
+
+		}
+
+        private void cuotasven_Click(object sender, EventArgs e)
+        {
+            FrmCuotasVencidas frmCuotasVencidas = new FrmCuotasVencidas(this);
+            frmCuotasVencidas.Show();
+            this.Hide();
+        }
+    }
 }

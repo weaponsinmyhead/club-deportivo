@@ -1,33 +1,33 @@
 ﻿namespace FormularioLogin
 {
-    partial class FrmInicio
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class FrmInicio
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.label1 = new System.Windows.Forms.Label();
 			this.Registro = new System.Windows.Forms.Button();
 			this.pcuota = new System.Windows.Forms.Button();
@@ -71,39 +71,43 @@
 			// 
 			// activ
 			// 
-			this.activ.Location = new System.Drawing.Point(121, 227);
+			this.activ.Location = new System.Drawing.Point(121, 200);
 			this.activ.Name = "activ";
 			this.activ.Size = new System.Drawing.Size(200, 50);
 			this.activ.TabIndex = 3;
 			this.activ.Text = "INSCRIPCIÓN ACTIVIDAD";
 			this.activ.UseVisualStyleBackColor = true;
+			this.activ.Click += new System.EventHandler(this.activ_Click);
 			// 
 			// asistencias
 			// 
-			this.asistencias.Location = new System.Drawing.Point(121, 334);
+			this.asistencias.Location = new System.Drawing.Point(121, 276);
 			this.asistencias.Name = "asistencias";
 			this.asistencias.Size = new System.Drawing.Size(200, 50);
 			this.asistencias.TabIndex = 4;
 			this.asistencias.Text = "ASISTENCIAS";
 			this.asistencias.UseVisualStyleBackColor = true;
+			this.asistencias.Click += new System.EventHandler(this.asistencias_Click);
 			// 
 			// vcuotas
 			// 
-			this.vcuotas.Location = new System.Drawing.Point(456, 227);
+			this.vcuotas.Location = new System.Drawing.Point(456, 200);
 			this.vcuotas.Name = "vcuotas";
 			this.vcuotas.Size = new System.Drawing.Size(200, 50);
 			this.vcuotas.TabIndex = 5;
 			this.vcuotas.Text = "VERIFICACIÓN CUOTAS";
 			this.vcuotas.UseVisualStyleBackColor = true;
+			this.vcuotas.Click += new System.EventHandler(this.vcuotas_Click);
 			// 
 			// cuotasven
 			// 
-			this.cuotasven.Location = new System.Drawing.Point(456, 334);
+			this.cuotasven.Location = new System.Drawing.Point(456, 276);
 			this.cuotasven.Name = "cuotasven";
 			this.cuotasven.Size = new System.Drawing.Size(200, 50);
 			this.cuotasven.TabIndex = 6;
 			this.cuotasven.Text = "LISTADO CUOTAS VENCIDAS";
 			this.cuotasven.UseVisualStyleBackColor = true;
+			this.cuotasven.Click += new System.EventHandler(this.cuotasven_Click);
 			// 
 			// btnSalir
 			// 
@@ -131,20 +135,21 @@
 			this.Controls.Add(this.label1);
 			this.Name = "FrmInicio";
 			this.Text = "Form1";
+			this.Load += new System.EventHandler(this.FrmInicio_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Registro;
-        private System.Windows.Forms.Button pcuota;
-        private System.Windows.Forms.Button activ;
-        private System.Windows.Forms.Button asistencias;
-        private System.Windows.Forms.Button vcuotas;
-        private System.Windows.Forms.Button cuotasven;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button Registro;
+		private System.Windows.Forms.Button pcuota;
+		private System.Windows.Forms.Button activ;
+		private System.Windows.Forms.Button asistencias;
+		private System.Windows.Forms.Button vcuotas;
+		private System.Windows.Forms.Button cuotasven;
 		private System.Windows.Forms.Button btnSalir;
 	}
 }
