@@ -41,12 +41,13 @@
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(383, 5);
+            this.lblTitulo.Location = new System.Drawing.Point(268, 7);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(282, 37);
+            this.lblTitulo.Size = new System.Drawing.Size(360, 37);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Consultar Cuotas";
+            this.lblTitulo.Text = "Cuotas - Vencimientos";
+            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // lblDni
             // 
