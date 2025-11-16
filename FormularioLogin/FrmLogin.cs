@@ -143,6 +143,11 @@ namespace FormularioLogin
 			public static string Email { get; set; }
 			public static bool EstaLogueado => Id > 0;
 		}
-	}
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 	
 }
