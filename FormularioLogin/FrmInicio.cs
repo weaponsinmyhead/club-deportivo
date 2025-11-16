@@ -12,10 +12,12 @@ namespace FormularioLogin
 {
     public partial class FrmInicio : Form
     {
-        public FrmInicio()
+        private Form FormLogin;
+		public FrmInicio(Form formLogin)
         {
             InitializeComponent();
-        }
+            FormLogin = formLogin;
+		}
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,7 +36,10 @@ namespace FormularioLogin
 			this.Hide();
 		}
 
-	
-
+		private void btnSalir_Click(object sender, EventArgs e)
+		{
+            this.Close();
+            FormLogin.Show();
+		}
 	}
 }

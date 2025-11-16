@@ -40,7 +40,7 @@ namespace FormularioLogin
 			{
 				MessageBox.Show($"Bienvenido {UsuarioActual.Nombre}");
 				// Si el usuario y la contraseña son correctos, abrir el formulario de inicio
-				FrmInicio frminicio = new FrmInicio();
+				FrmInicio frminicio = new FrmInicio(this);
 				frminicio.Show();
 				this.Hide();
 			}
