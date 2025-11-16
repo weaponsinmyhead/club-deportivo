@@ -413,6 +413,9 @@ namespace FormularioLogin
 			public string NumeroCarnet { get; set; } = string.Empty;
 		}
 
+        private void picLogo_Click(object sender, EventArgs e)
+        {
 
-	}
+        }
+    }
 }
