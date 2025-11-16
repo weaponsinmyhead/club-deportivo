@@ -299,7 +299,7 @@ namespace FormularioLogin
 			new MySqlParameter("@fecha_vencimiento", _esSocio ? (object)_fechaVencimiento : DBNull.Value),
 			new MySqlParameter("@nombre", _persona.Nombre),
 			new MySqlParameter("@apellido", _persona.Apellido),
-			new MySqlParameter("@estado", 0), // 0 = pendiente, 1 = pagado
+			new MySqlParameter("@estado", 1), // 0 = pendiente, 1 = pagado
             new MySqlParameter("@actividad_id", _actividadSeleccionada.Id),
 			new MySqlParameter("@es_socio", _esSocio ? 1 : 0)
 		};

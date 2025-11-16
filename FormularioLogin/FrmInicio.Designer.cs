@@ -30,6 +30,7 @@ namespace FormularioLogin
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.label1 = new System.Windows.Forms.Label();
             this.Registro = new System.Windows.Forms.Button();
             this.pcuota = new System.Windows.Forms.Button();
@@ -140,8 +141,10 @@ namespace FormularioLogin
             this.Controls.Add(this.pcuota);
             this.Controls.Add(this.Registro);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInicio";
-            this.Text = "Form1";
+            this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.FrmInicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -32,6 +32,7 @@ namespace FormularioLogin
 
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPagoCuota));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblDniId = new System.Windows.Forms.Label();
             this.txtDniId = new System.Windows.Forms.TextBox();
@@ -339,6 +340,7 @@ namespace FormularioLogin
             this.Controls.Add(this.lblDniId);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmPagoCuota";
