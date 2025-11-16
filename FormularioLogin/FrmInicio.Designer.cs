@@ -1,4 +1,6 @@
-﻿namespace FormularioLogin
+﻿using System;
+
+namespace FormularioLogin
 {
 	partial class FrmInicio
 	{
@@ -31,8 +33,6 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.Registro = new System.Windows.Forms.Button();
 			this.pcuota = new System.Windows.Forms.Button();
-			this.activ = new System.Windows.Forms.Button();
-			this.asistencias = new System.Windows.Forms.Button();
 			this.vcuotas = new System.Windows.Forms.Button();
 			this.cuotasven = new System.Windows.Forms.Button();
 			this.btnSalir = new System.Windows.Forms.Button();
@@ -69,43 +69,23 @@
 			this.pcuota.UseVisualStyleBackColor = true;
 			this.pcuota.Click += new System.EventHandler(this.pcuota_Click);
 			// 
-			// activ
-			// 
-			this.activ.Location = new System.Drawing.Point(121, 200);
-			this.activ.Name = "activ";
-			this.activ.Size = new System.Drawing.Size(200, 50);
-			this.activ.TabIndex = 3;
-			this.activ.Text = "INSCRIPCIÓN ACTIVIDAD";
-			this.activ.UseVisualStyleBackColor = true;
-			this.activ.Click += new System.EventHandler(this.activ_Click);
-			// 
-			// asistencias
-			// 
-			this.asistencias.Location = new System.Drawing.Point(121, 276);
-			this.asistencias.Name = "asistencias";
-			this.asistencias.Size = new System.Drawing.Size(200, 50);
-			this.asistencias.TabIndex = 4;
-			this.asistencias.Text = "ASISTENCIAS";
-			this.asistencias.UseVisualStyleBackColor = true;
-			this.asistencias.Click += new System.EventHandler(this.asistencias_Click);
-			// 
 			// vcuotas
 			// 
-			this.vcuotas.Location = new System.Drawing.Point(456, 200);
+			this.vcuotas.Location = new System.Drawing.Point(121, 249);
 			this.vcuotas.Name = "vcuotas";
 			this.vcuotas.Size = new System.Drawing.Size(200, 50);
 			this.vcuotas.TabIndex = 5;
-			this.vcuotas.Text = "VERIFICACIÓN CUOTAS";
+			this.vcuotas.Text = "ESTADOS";
 			this.vcuotas.UseVisualStyleBackColor = true;
 			this.vcuotas.Click += new System.EventHandler(this.vcuotas_Click);
 			// 
 			// cuotasven
 			// 
-			this.cuotasven.Location = new System.Drawing.Point(456, 276);
+			this.cuotasven.Location = new System.Drawing.Point(456, 249);
 			this.cuotasven.Name = "cuotasven";
 			this.cuotasven.Size = new System.Drawing.Size(200, 50);
 			this.cuotasven.TabIndex = 6;
-			this.cuotasven.Text = "LISTADO CUOTAS VENCIDAS";
+			this.cuotasven.Text = "VENCIMIENTOS";
 			this.cuotasven.UseVisualStyleBackColor = true;
 			this.cuotasven.Click += new System.EventHandler(this.cuotasven_Click);
 			// 
@@ -128,26 +108,23 @@
 			this.Controls.Add(this.btnSalir);
 			this.Controls.Add(this.cuotasven);
 			this.Controls.Add(this.vcuotas);
-			this.Controls.Add(this.asistencias);
-			this.Controls.Add(this.activ);
 			this.Controls.Add(this.pcuota);
 			this.Controls.Add(this.Registro);
 			this.Controls.Add(this.label1);
 			this.Name = "FrmInicio";
 			this.Text = "Form1";
-			this.Load += new System.EventHandler(this.FrmInicio_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
+
+		
 
 		#endregion
 
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button Registro;
 		private System.Windows.Forms.Button pcuota;
-		private System.Windows.Forms.Button activ;
-		private System.Windows.Forms.Button asistencias;
 		private System.Windows.Forms.Button vcuotas;
 		private System.Windows.Forms.Button cuotasven;
 		private System.Windows.Forms.Button btnSalir;
