@@ -15,6 +15,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCuotasVencidas));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelFiltros = new System.Windows.Forms.Panel();
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
@@ -56,7 +57,7 @@
             this.panelFiltros.Controls.Add(this.chkSoloActivos);
             this.panelFiltros.Controls.Add(this.lblFiltros);
             this.panelFiltros.Location = new System.Drawing.Point(20, 46);
-            this.panelFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(1023, 53);
             this.panelFiltros.TabIndex = 1;
@@ -66,7 +67,7 @@
             this.btnLimpiarFiltros.BackColor = System.Drawing.Color.LightGray;
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarFiltros.Location = new System.Drawing.Point(520, 16);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(67, 23);
             this.btnLimpiarFiltros.TabIndex = 4;
@@ -81,7 +82,7 @@
             this.btnAplicarFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAplicarFiltros.ForeColor = System.Drawing.Color.White;
             this.btnAplicarFiltros.Location = new System.Drawing.Point(433, 16);
-            this.btnAplicarFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAplicarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnAplicarFiltros.Name = "btnAplicarFiltros";
             this.btnAplicarFiltros.Size = new System.Drawing.Size(73, 23);
             this.btnAplicarFiltros.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             this.chkMostrarInactivos.AutoSize = true;
             this.chkMostrarInactivos.Location = new System.Drawing.Point(213, 21);
-            this.chkMostrarInactivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkMostrarInactivos.Margin = new System.Windows.Forms.Padding(2);
             this.chkMostrarInactivos.Name = "chkMostrarInactivos";
             this.chkMostrarInactivos.Size = new System.Drawing.Size(128, 17);
             this.chkMostrarInactivos.TabIndex = 2;
@@ -107,7 +108,7 @@
             this.chkSoloActivos.Checked = true;
             this.chkSoloActivos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkSoloActivos.Location = new System.Drawing.Point(87, 21);
-            this.chkSoloActivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkSoloActivos.Margin = new System.Windows.Forms.Padding(2);
             this.chkSoloActivos.Name = "chkSoloActivos";
             this.chkSoloActivos.Size = new System.Drawing.Size(120, 17);
             this.chkSoloActivos.TabIndex = 1;
@@ -134,7 +135,7 @@
             this.dataGridViewCuotasVencidas.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCuotasVencidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCuotasVencidas.Location = new System.Drawing.Point(20, 110);
-            this.dataGridViewCuotasVencidas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewCuotasVencidas.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewCuotasVencidas.Name = "dataGridViewCuotasVencidas";
             this.dataGridViewCuotasVencidas.ReadOnly = true;
             this.dataGridViewCuotasVencidas.RowHeadersWidth = 62;
@@ -180,7 +181,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.LightGray;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Location = new System.Drawing.Point(950, 380);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(93, 26);
             this.btnVolver.TabIndex = 6;
@@ -195,7 +196,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnExportar.ForeColor = System.Drawing.Color.White;
             this.btnExportar.Location = new System.Drawing.Point(837, 380);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(100, 26);
             this.btnExportar.TabIndex = 7;
@@ -211,7 +212,7 @@
             this.panelResumen.Controls.Add(this.lblTotalCuotas);
             this.panelResumen.Controls.Add(this.lblTotalMonto);
             this.panelResumen.Location = new System.Drawing.Point(20, 346);
-            this.panelResumen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelResumen.Margin = new System.Windows.Forms.Padding(2);
             this.panelResumen.Name = "panelResumen";
             this.panelResumen.Size = new System.Drawing.Size(1023, 30);
             this.panelResumen.TabIndex = 8;
@@ -229,7 +230,8 @@
             this.Controls.Add(this.panelFiltros);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCuotasVencidas";

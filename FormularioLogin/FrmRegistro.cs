@@ -83,7 +83,7 @@ namespace FormularioLogin
 				DateTime fechaNac = dateTimeNac.Value.Date; // .Date para que solo sea la fecha sin la hora.
 				string email = textBoxEmail.Text.Trim();
 
-				string query = "INSERT INTO nosocio (nombre, apellido, dni,fecha_nac, email) " +
+				string query = "INSERT INTO noSocio (nombre, apellido, dni,fecha_nac, email) " +
 				   "VALUES (@nombre, @apellido, @dni, @fechaNac, @correo)";
 
 				int result = DatabaseHelper.ExecuteNonQuery(

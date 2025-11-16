@@ -46,7 +46,7 @@ namespace FormularioLogin
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimeEmision = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -196,15 +196,15 @@ namespace FormularioLogin
             this.dateTimeEmision.Size = new System.Drawing.Size(267, 20);
             this.dateTimeEmision.TabIndex = 18;
             // 
-            // button2
+            // btnVolver
             // 
-            this.button2.Location = new System.Drawing.Point(521, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 39);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btn_volverInicio);
+            this.btnVolver.Location = new System.Drawing.Point(521, 270);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(182, 39);
+            this.btnVolver.TabIndex = 19;
+            this.btnVolver.Text = "VOLVER";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btn_volverInicio);
             // 
             // comboBoxTipo
             // 
@@ -249,7 +249,7 @@ namespace FormularioLogin
             this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBoxTipo);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dateTimeEmision);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button1);
@@ -267,7 +267,7 @@ namespace FormularioLogin
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRegistro";
-            this.Text = "Form1";
+            this.Text = "Registrar Socio/No socio";
             this.Load += new System.EventHandler(this.FrmRegistro_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
@@ -293,7 +293,7 @@ namespace FormularioLogin
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimeEmision;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnVolver;
 		private System.Windows.Forms.ComboBox comboBoxTipo;
         private Panel panel1;
         private PictureBox picLogo;
