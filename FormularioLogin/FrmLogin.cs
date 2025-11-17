@@ -9,11 +9,11 @@ namespace FormularioLogin
 {
     public partial class FrmLogin : Form
     {
-		private DatabaseHelper dbHelper;
+	
 		public FrmLogin()
         {
             InitializeComponent();
-            dbHelper = new DatabaseHelper();
+           
         }
 		
 		private void FrmLogin_Load(object sender, EventArgs e)
@@ -68,40 +68,6 @@ namespace FormularioLogin
             }
         }
 
-		private void btnCreateDatabase_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				// Deshabilitar el botón durante la operación
-				btnCreateDatabase.Enabled = false;
-				btnCreateDatabase.Text = "Creando BD...";
-
-				// Usar Task.Run para no bloquear la UI
-				Task.Run(() =>
-				{
-					bool success = dbHelper.CreateDatabase();
-
-					// Volver a habilitar el botón en el hilo de UI
-					this.Invoke(new Action(() =>
-					{
-						btnCreateDatabase.Enabled = true;
-						btnCreateDatabase.Text = "Crear Base de Datos";
-
-						if (success)
-						{
-							// Opcional: actualizar algún label o status
-							lblStatus.Text = "Base de datos creada - " + DateTime.Now.ToString();
-						}
-					}));
-				});
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show($"Error: {ex.Message}");
-				btnCreateDatabase.Enabled = true;
-				btnCreateDatabase.Text = "Crear Base de Datos";
-			}
-		}
 		public bool VerificarLogin(string email, string password)
 		{
 			try

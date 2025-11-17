@@ -245,7 +245,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\AppConfiguration.cs" />
+    <Compile Include="Configurations\ConfigurationManager.cs" />
     <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="Data\DBScriptsCreate.cs" />
     <Compile Include="FrmBaseDeDatos.cs">

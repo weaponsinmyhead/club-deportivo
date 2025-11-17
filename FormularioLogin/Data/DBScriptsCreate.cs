@@ -1,44 +1,48 @@
 ﻿
+using FormularioLogin.Configurations;
+
 namespace FormularioLogin.Data
 {
 	public class DBScriptsCreate
 	{
 
-		public static string CreateDatabase => @"
-		
-		-- Schema u462690221_club
+		private static string DatabaseName => ConfigurationManager.DatabaseName;
+
+		public static string CreateDatabase => $@"
+        -- Schema {DatabaseName}
+        -- -----------------------------------------------------
+        CREATE SCHEMA IF NOT EXISTS `{DatabaseName}` DEFAULT CHARACTER SET utf8 ;
+        USE `{DatabaseName}` ;
+        SET FOREIGN_KEY_CHECKS = 0;
+        ";
+
+
+		public static string CreateTables => $@"
+
+		USE {DatabaseName};
+
+		DROP TABLE IF EXISTS `{DatabaseName}`.`cuota`;
+		DROP TABLE IF EXISTS `{DatabaseName}`.`inscripcion`;
+		DROP TABLE IF EXISTS `{DatabaseName}`.`actividad`;
+		DROP TABLE IF EXISTS `{DatabaseName}`.`profesor`;
+		DROP TABLE IF EXISTS `{DatabaseName}`.`noSocio`;
+		DROP TABLE IF EXISTS `{DatabaseName}`.`socio`;
+		DROP TABLE IF EXISTS `{DatabaseName}`.`usuario`;
+		DROP TABLE IF EXISTS `{DatabaseName}`.`rol`;
+
 		-- -----------------------------------------------------
-		CREATE SCHEMA IF NOT EXISTS `u462690221_club` DEFAULT CHARACTER SET utf8 ;
-		USE `u462690221_club` ;
-		SET FOREIGN_KEY_CHECKS = 0;
-		";
-
-		public static string CreateTables => @"
-
-		USE u462690221_club;
-
-		DROP TABLE IF EXISTS `u462690221_club`.`cuota`;
-		DROP TABLE IF EXISTS `u462690221_club`.`inscripcion`;
-		DROP TABLE IF EXISTS `u462690221_club`.`actividad`;
-		DROP TABLE IF EXISTS `u462690221_club`.`profesor`;
-		DROP TABLE IF EXISTS `u462690221_club`.`noSocio`;
-		DROP TABLE IF EXISTS `u462690221_club`.`socio`;
-		DROP TABLE IF EXISTS `u462690221_club`.`usuario`;
-		DROP TABLE IF EXISTS `u462690221_club`.`rol`;
-
+		-- Table `{DatabaseName}`.`rol`
 		-- -----------------------------------------------------
-		-- Table `u462690221_club`.`rol`
-		-- -----------------------------------------------------
-		CREATE TABLE IF NOT EXISTS `u462690221_club`.`rol` (
+		CREATE TABLE IF NOT EXISTS `{DatabaseName}`.`rol` (
 		  `id` INT NOT NULL AUTO_INCREMENT,
 		  `name` VARCHAR(255) NOT NULL,
 		  PRIMARY KEY (`id`)
 		) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;;
 
 		-- -----------------------------------------------------
-		-- Table `u462690221_club`.`usuario`
+		-- Table `{DatabaseName}`.`usuario`
 		-- -----------------------------------------------------
-		CREATE TABLE IF NOT EXISTS `u462690221_club`.`usuario` (
+		CREATE TABLE IF NOT EXISTS `{DatabaseName}`.`usuario` (
 		  `id` INT NOT NULL AUTO_INCREMENT,
 		  `nombre` VARCHAR(45) NOT NULL,
 		  `email` VARCHAR(45) NOT NULL,
@@ -52,15 +56,15 @@ namespace FormularioLogin.Data
 		  INDEX `fk_rol_idx` (`rol_id` ASC) VISIBLE,
 		  CONSTRAINT `fk_rol`
 			FOREIGN KEY (`rol_id`)
-			REFERENCES `u462690221_club`.`rol` (`id`)
+			REFERENCES `{DatabaseName}`.`rol` (`id`)
 			ON DELETE NO ACTION
 			ON UPDATE NO ACTION
 		) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 		-- -----------------------------------------------------
-		-- Table `u462690221_club`.`socio`
+		-- Table `{DatabaseName}`.`socio`
 		-- -----------------------------------------------------
-		CREATE TABLE IF NOT EXISTS `u462690221_club`.`socio` (
+		CREATE TABLE IF NOT EXISTS `{DatabaseName}`.`socio` (
 		  `id` INT NOT NULL AUTO_INCREMENT,
 		  `nombre` VARCHAR(45) NOT NULL,
 		  `apellido` VARCHAR(45) NOT NULL,
@@ -76,9 +80,9 @@ namespace FormularioLogin.Data
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 		-- -----------------------------------------------------
-		-- Table `u462690221_club`.`noSocio`
+		-- Table `{DatabaseName}`.`noSocio`
 		-- -----------------------------------------------------
-		CREATE TABLE IF NOT EXISTS `u462690221_club`.`noSocio` (
+		CREATE TABLE IF NOT EXISTS `{DatabaseName}`.`noSocio` (
 		  `id` INT NOT NULL AUTO_INCREMENT,
 		  `nombre` VARCHAR(45) NOT NULL,
 		  `apellido` VARCHAR(45) NOT NULL,
@@ -91,9 +95,9 @@ namespace FormularioLogin.Data
 		) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;;
 
 		-- -----------------------------------------------------
-		-- Table `u462690221_club`.`profesor`
+		-- Table `{DatabaseName}`.`profesor`
 		-- -----------------------------------------------------
-		CREATE TABLE IF NOT EXISTS `u462690221_club`.`profesor` (
+		CREATE TABLE IF NOT EXISTS `{DatabaseName}`.`profesor` (
 		  `id` INT NOT NULL AUTO_INCREMENT,  
 		  `usuario_id` INT NULL,
 		  `especialidad` VARCHAR(45) NULL,
@@ -105,15 +109,15 @@ namespace FormularioLogin.Data
 		  INDEX `fk_profesor_usuario_idx` (`usuario_id` ASC) VISIBLE,
 		  CONSTRAINT `fk_profesor_usuario`
 			FOREIGN KEY (`usuario_id`)
-			REFERENCES `u462690221_club`.`usuario` (`id`)
+			REFERENCES `{DatabaseName}`.`usuario` (`id`)
 			ON DELETE NO ACTION
 			ON UPDATE NO ACTION
 		) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 		-- -----------------------------------------------------
-		-- Table `u462690221_club`.`actividad`
+		-- Table `{DatabaseName}`.`actividad`
 		-- -----------------------------------------------------
-		CREATE TABLE IF NOT EXISTS `u462690221_club`.`actividad` (
+		CREATE TABLE IF NOT EXISTS `{DatabaseName}`.`actividad` (
 		  `id` INT NOT NULL AUTO_INCREMENT, 
 		  `nombre_actividad` VARCHAR(45) NOT NULL,  
 		  `tipo` VARCHAR(45) NULL,
@@ -126,15 +130,15 @@ namespace FormularioLogin.Data
 		  INDEX `profesor_id_idx` (`profesor_id` ASC) VISIBLE,
 		  CONSTRAINT `fk_actividad_profesor`
 			FOREIGN KEY (`profesor_id`)
-			REFERENCES `u462690221_club`.`profesor` (`id`)
+			REFERENCES `{DatabaseName}`.`profesor` (`id`)
 			ON DELETE NO ACTION
 			ON UPDATE NO ACTION
 		) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 		-- -----------------------------------------------------
-		-- Table `u462690221_club`.`cuota`
+		-- Table `{DatabaseName}`.`cuota`
 		-- -----------------------------------------------------
-		CREATE TABLE IF NOT EXISTS `u462690221_club`.`cuota` (
+		CREATE TABLE IF NOT EXISTS `{DatabaseName}`.`cuota` (
 		`id` int NOT NULL AUTO_INCREMENT,
 		`socio_id` int DEFAULT NULL,
 		`no_socio_id` int DEFAULT NULL,
@@ -150,18 +154,18 @@ namespace FormularioLogin.Data
 		KEY `fk_socio_id_idx` (`socio_id`),
 		KEY `fk_no_socio_id_idx` (`no_socio_id`),
 		KEY `fk_actividad_id_idx` (`actividad_id`),
-		CONSTRAINT `fk_no_socio_id` FOREIGN KEY (`no_socio_id`) REFERENCES `u462690221_club`.`noSocio` (`id`),
-		CONSTRAINT `fk_socio_id` FOREIGN KEY (`socio_id`) REFERENCES `u462690221_club`.`socio` (`id`),
-		CONSTRAINT `fk_cuota_actividad` FOREIGN KEY (`actividad_id`) REFERENCES `u462690221_club`.`actividad` (`id`)
+		CONSTRAINT `fk_no_socio_id` FOREIGN KEY (`no_socio_id`) REFERENCES `{DatabaseName}`.`noSocio` (`id`),
+		CONSTRAINT `fk_socio_id` FOREIGN KEY (`socio_id`) REFERENCES `{DatabaseName}`.`socio` (`id`),
+		CONSTRAINT `fk_cuota_actividad` FOREIGN KEY (`actividad_id`) REFERENCES `{DatabaseName}`.`actividad` (`id`)
 			ON DELETE NO ACTION
 			ON UPDATE NO ACTION
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 
 		-- -----------------------------------------------------
-		-- Table `u462690221_club`.`inscripcion`
+		-- Table `{DatabaseName}`.`inscripcion`
 		-- -----------------------------------------------------
-		CREATE TABLE IF NOT EXISTS `u462690221_club`.`inscripcion` (
+		CREATE TABLE IF NOT EXISTS `{DatabaseName}`.`inscripcion` (
 		  `id` INT NOT NULL AUTO_INCREMENT,  
 		  `socio_id` INT NULL,
 		  `no_socio_id` INT NULL,
@@ -175,17 +179,17 @@ namespace FormularioLogin.Data
 		  INDEX `fk_inscripcion_actividad_idx` (`actividad_id` ASC) VISIBLE,
 		  CONSTRAINT `fk_inscripcion_socio`  
 			FOREIGN KEY (`socio_id`)
-			REFERENCES `u462690221_club`.`socio` (`id`)
+			REFERENCES `{DatabaseName}`.`socio` (`id`)
 			ON DELETE NO ACTION
 			ON UPDATE NO ACTION,
 		  CONSTRAINT `fk_inscripcion_nosocio`
 			FOREIGN KEY (`no_socio_id`)
-			REFERENCES `u462690221_club`.`noSocio` (`id`)
+			REFERENCES `{DatabaseName}`.`noSocio` (`id`)
 			ON DELETE NO ACTION
 			ON UPDATE NO ACTION,
 		  CONSTRAINT `fk_inscripcion_actividad`
 			FOREIGN KEY (`actividad_id`)
-			REFERENCES `u462690221_club`.`actividad` (`id`)
+			REFERENCES `{DatabaseName}`.`actividad` (`id`)
 			ON DELETE NO ACTION
 			ON UPDATE NO ACTION,
 		  CONSTRAINT `chk_inscripcion_participante` 
@@ -198,13 +202,13 @@ namespace FormularioLogin.Data
 
 		//en estos scripts van los datos iniciales para la BBDD
 		
-		public static string InsertInitialData => @"
-		INSERT INTO u462690221_club.rol(name) VALUES('Admin');
-		INSERT INTO u462690221_club.rol(name) VALUES('Profesor');
+		public static string InsertInitialData => $@"
+		INSERT INTO {DatabaseName}.rol(name) VALUES('Admin');
+		INSERT INTO {DatabaseName}.rol(name) VALUES('Profesor');
 
 		
 		
-		INSERT INTO `u462690221_club`.`usuario` (`nombre`, `email`, `contrasenia`, `rol_id`) VALUES
+		INSERT INTO `{DatabaseName}`.`usuario` (`nombre`, `email`, `contrasenia`, `rol_id`) VALUES
 		('admin', 'admin@sistema.com','admin',1),
 		('Prof. Natación', 'profe.natacion@club.com', 'password123', 2),
 		('Prof. Musculación', 'profe.musculacion@club.com', 'password123', 2),
@@ -218,7 +222,7 @@ namespace FormularioLogin.Data
 		('Prof. Spinning', 'profe.spinning@club.com', 'password123', 2);
 
 
-		INSERT INTO u462690221_club.socio (`nombre`, `apellido`, `dni`, `fecha_nac`, `email`, `fecha_emision`, `create_time`) VALUES
+		INSERT INTO {DatabaseName}.socio (`nombre`, `apellido`, `dni`, `fecha_nac`, `email`, `fecha_emision`, `create_time`) VALUES
 		('Juan', 'Pérez', '30123456', '1985-03-15', 'juan.perez@email.com', '2023-01-10', '2024-01-18 08:15:00'),
 		('María', 'González', '32123457', '1990-07-22', 'maria.gonzalez@email.com', '2023-02-15', '2024-01-12 11:30:00'),
 		('Carlos', 'Rodríguez', '34123458', '1988-11-30', 'carlos.rodriguez@email.com', '2023-03-20', '2024-01-05 14:45:00'),
@@ -230,7 +234,7 @@ namespace FormularioLogin.Data
 		('Pedro', 'Sánchez', '46123464', '1986-06-11', 'pedro.sanchez@email.com', '2023-09-20', '2023-10-20 12:55:00'),
 		('Elena', 'Ramírez', '48123465', '1993-10-07', 'elena.ramirez@email.com', '2023-10-25', '2023-10-08 18:05:00');
 
-		INSERT INTO u462690221_club.noSocio (`nombre`, `apellido`, `dni`, `fecha_nac`, `email`, `create_time`) VALUES
+		INSERT INTO {DatabaseName}.noSocio (`nombre`, `apellido`, `dni`, `fecha_nac`, `email`, `create_time`) VALUES
 		('Miguel', 'Torres', '50123466', '1994-02-18', 'miguel.torres@email.com', '2024-01-15 09:30:00'),
 		('Carmen', 'Flores', '52123467', '1989-07-12', 'carmen.flores@email.com', '2024-01-10 14:20:00'),
 		('Jorge', 'Vargas', '54123468', '1996-11-05', 'jorge.vargas@email.com', '2023-12-28 11:45:00'),
@@ -242,7 +246,7 @@ namespace FormularioLogin.Data
 		('Roberto', 'Mendoza', '66123474', '1981-06-30', 'roberto.mendoza@email.com', '2023-10-10 12:25:00'),
 		('Adriana', 'Rojas', '68123475', '1999-08-26', 'adriana.rojas@email.com', '2023-09-28 17:50:00');
 
-		INSERT INTO u462690221_club.profesor (`especialidad`, `asistencia`, `sueldo_mensual`, `fecha_ingreso`, `salon_asignado`) VALUES
+		INSERT INTO {DatabaseName}.profesor (`especialidad`, `asistencia`, `sueldo_mensual`, `fecha_ingreso`, `salon_asignado`) VALUES
 		('Natación', 'Regular', 85000.00, '2022-03-15', 'Pileta Principal'),
 		('Musculación', 'Excelente', 78000.00, '2021-06-10', 'Sala de Pesas A'),
 		('Yoga', 'Buena', 72000.00, '2023-01-20', 'Sala de Yoga'),
@@ -255,7 +259,7 @@ namespace FormularioLogin.Data
 		('Spinning', 'Buena', 79000.00, '2022-11-08', 'Sala de Spinning');
 
 
-		INSERT INTO u462690221_club.actividad (`nombre_actividad`, `tipo`, `horario`, `profesor_id`, `cupo_max`, `precio_diario`, `precio_mensual`) VALUES
+		INSERT INTO {DatabaseName}.actividad (`nombre_actividad`, `tipo`, `horario`, `profesor_id`, `cupo_max`, `precio_diario`, `precio_mensual`) VALUES
 		('Natación Principiantes', 'Acuático', 800, 1, 15, 500.00, 3500.00),
 		('Natación Avanzada', 'Acuático', 1700, 1, 12, 600.00, 4000.00),
 		('Musculación Básica', 'Fuerza', 900, 2, 20, 400.00, 2800.00),
@@ -279,7 +283,7 @@ namespace FormularioLogin.Data
 
 
 	
-		INSERT INTO `u462690221_club`.`cuota` 
+		INSERT INTO `{DatabaseName}`.`cuota` 
 		(`socio_id`, `monto`, `fecha_emision`, `fecha_vencimiento`, `nombre`, `apellido`, `estado`, `actividad_id`, `es_socio`) VALUES
 		(1, 3500.00, '2024-10-01', '2024-10-31', 'Juan', 'Pérez', 1, 1, 1),		
 		(2, 3500.00, '2024-11-01', '2024-11-12', 'María', 'González', 0, 2, 1),
@@ -287,7 +291,7 @@ namespace FormularioLogin.Data
 		(4, 4000.00, '2024-11-01', '2024-11-30', 'Ana', 'López', 1, 4, 1),
 		(5, 3200.00, '2024-11-01', '2024-11-12', 'Luis', 'Martínez', 0, 5, 1);
 
-		INSERT INTO `u462690221_club`.`cuota` 
+		INSERT INTO `{DatabaseName}`.`cuota` 
 		(`socio_id`, `monto`, `fecha_emision`, `fecha_vencimiento`, `nombre`, `apellido`, `estado`, `actividad_id`, `es_socio`) VALUES
 		(1, 3500.00, '2024-10-01', '2024-10-31', 'Juan', 'Pérez', 1, 1, 1),
 		(2, 3500.00, '2024-10-01', '2024-10-31', 'María', 'González', 1, 2, 1),
