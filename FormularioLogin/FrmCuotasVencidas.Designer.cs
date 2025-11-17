@@ -43,9 +43,9 @@
             this.lblTitulo.Location = new System.Drawing.Point(233, 7);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(286, 26);
+            this.lblTitulo.Size = new System.Drawing.Size(250, 26);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Cuotas Vencidas - Socios";
+            this.lblTitulo.Text = "Vencimientos - Socios";
             // 
             // panelFiltros
             // 
@@ -237,7 +237,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmCuotasVencidas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cuotas Vencidas";
+            this.Text = "Vencimientos";
             this.Load += new System.EventHandler(this.FrmCuotasVencidas_Load);
             this.panelFiltros.ResumeLayout(false);
             this.panelFiltros.PerformLayout();

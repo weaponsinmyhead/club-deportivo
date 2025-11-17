@@ -45,9 +45,9 @@
             this.lblTitulo.Location = new System.Drawing.Point(268, 7);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(360, 37);
+            this.lblTitulo.Size = new System.Drawing.Size(140, 37);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Cuotas - Vencimientos";
+            this.lblTitulo.Text = "Estados";
             this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // lblDni
@@ -236,7 +236,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmConsultarCuota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consultar Cuotas / Vencimientos";
+            this.Text = "Estado";
             this.Load += new System.EventHandler(this.FrmConsultarCuota_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCuotas)).EndInit();
             this.panel1.ResumeLayout(false);
