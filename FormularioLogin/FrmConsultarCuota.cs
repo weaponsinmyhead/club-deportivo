@@ -220,5 +220,10 @@ namespace FormularioLogin
             formInicio.Show();
             this.Close();
         }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
