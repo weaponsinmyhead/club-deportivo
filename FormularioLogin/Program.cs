@@ -53,9 +53,6 @@ namespace FormularioLogin
 				var configForm = new FrmBaseDeDatos();
 				configForm.ShowDialog();
 			}
-
-
-			
         }
     }
 }

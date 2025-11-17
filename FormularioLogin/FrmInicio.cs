@@ -52,15 +52,5 @@ namespace FormularioLogin
 			this.Close();
 			FormLogin.Show();
 		}
-
-        private void picLogo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmInicio_Load(object sender, EventArgs e)
-        {
-
-        }
-    }
+	}
 }

@@ -52,42 +52,43 @@ namespace FormularioLogin
                 {
                     filtroEstado = " AND COALESCE(s.estado, 1) = 0";
                 }
-                // Si ambos están marcados o ninguno, no aplicamos filtro de estado
+				// Si ambos están marcados o ninguno, no aplicamos filtro de estado
 
-                string query = $@"
-                    SELECT 
-                        c.id AS 'ID Cuota',
-                        s.id AS 'ID Socio',
-                        s.dni AS 'DNI',
-                        s.nombre AS 'Nombre',
-                        s.apellido AS 'Apellido',
-                        s.email AS 'Email',
-                        CASE 
-                            WHEN COALESCE(s.estado, 1) = 1 THEN 'Activo'
-                            ELSE 'Inactivo'
-                        END AS 'Estado',
-                        CASE 
-                            WHEN COALESCE(s.carnet, 0) = 1 THEN 'Posee carnet'
-                            ELSE 'No posee carnet'
-                        END AS 'Carnet',
-                        c.monto AS 'Monto',
-                        DATE_FORMAT(c.fecha_emision, '%d/%m/%Y') AS 'Fecha Emisión Cuota',
-                        DATE_FORMAT(c.fecha_vencimiento, '%d/%m/%Y') AS 'Fecha Vencimiento',
-                        DATEDIFF(CURDATE(), c.fecha_vencimiento) AS 'Días Vencidos',
-                        CASE 
-                            WHEN COALESCE(c.estado, 0) = 1 THEN 'Pagado'
-                            ELSE 'Pendiente'
-                        END AS 'Estado Cuota'
-                    FROM cuota c
-                    INNER JOIN socio s ON c.socio_id = s.id
-                    WHERE c.es_socio = 1 
-                        AND c.fecha_vencimiento != '0000-00-00'
-                        AND c.fecha_vencimiento < CURDATE()
-                        AND COALESCE(c.estado, 0) != 1
-                        {filtroEstado}
-                    ORDER BY c.fecha_vencimiento ASC, s.apellido ASC, s.nombre ASC";
+		    string query = $@"
+                SELECT 
+                    c.id AS 'ID Cuota',
+                    s.id AS 'ID Socio',
+                    s.dni AS 'DNI',
+                    s.nombre AS 'Nombre',
+                    s.apellido AS 'Apellido',
+                    s.email AS 'Email',
+                    CASE 
+                        WHEN COALESCE(s.estado, 1) = 1 THEN 'Activo'
+                        ELSE 'Inactivo'
+                    END AS 'Estado',
+                    CASE 
+                        WHEN COALESCE(s.carnet, 0) = 1 THEN 'Posee carnet'
+                        ELSE 'No posee carnet'
+                    END AS 'Carnet',
+                    c.monto AS 'Monto',
+                    DATE_FORMAT(c.fecha_emision, '%d/%m/%Y') AS 'Fecha Emisión Cuota',
+                    DATE_FORMAT(c.fecha_vencimiento, '%d/%m/%Y') AS 'Fecha Vencimiento',
+                    DATEDIFF(CURDATE(), c.fecha_vencimiento) AS 'Días Vencidos',
+                    CASE 
+                        WHEN COALESCE(c.estado, 0) = 1 THEN 'Pagado'
+                        ELSE 'Pendiente'
+                    END AS 'Estado Cuota'
+                FROM cuota c
+                INNER JOIN socio s ON c.socio_id = s.id
+                WHERE c.es_socio = 1 
+                    AND c.fecha_vencimiento IS NOT NULL
+                    AND c.fecha_vencimiento > '1900-01-01'
+                    AND c.fecha_vencimiento < CURDATE()
+                    AND COALESCE(c.estado, 0) != 1
+                    {filtroEstado}
+                ORDER BY c.fecha_vencimiento ASC, s.apellido ASC, s.nombre ASC";
 
-                datosActuales = DatabaseHelper.ExecuteQuery(query);
+				datosActuales = DatabaseHelper.ExecuteQuery(query);
 
                 if (datosActuales.Rows.Count > 0)
                 {

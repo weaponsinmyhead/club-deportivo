@@ -13,7 +13,7 @@ namespace FormularioLogin.Configurations
 
 		static ConfigurationManager()
 		{
-			// Valores por defecto o cargar desde archivo si existe
+			// Valores por defecto 
 			LoadDefaultValues();
 		}
 
@@ -48,6 +48,7 @@ namespace FormularioLogin.Configurations
 			return !string.IsNullOrEmpty(DatabaseServer) &&
 				   !string.IsNullOrEmpty(DatabaseName) &&
 				   !string.IsNullOrEmpty(DatabaseUser) &&
+				   !string.IsNullOrEmpty(DatabasePort) &&
 				   !string.IsNullOrEmpty(DatabasePassword);
 		}
 

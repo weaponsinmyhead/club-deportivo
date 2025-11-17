@@ -15,11 +15,6 @@ namespace FormularioLogin
             InitializeComponent();
            
         }
-		
-		private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
 
        
         private void buttonIngresar_Click(object sender, EventArgs e)
@@ -52,7 +47,6 @@ namespace FormularioLogin
 				textBoxEmail.Focus();
 
 			}
-
         }
 
         private void textBoxContraseña_Enter(object sender, EventArgs e)
