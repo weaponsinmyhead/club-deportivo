@@ -137,6 +137,8 @@ namespace FormularioLogin
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(323, 20);
             this.textBoxNombre.TabIndex = 9;
+            this.textBoxNombre.Text = "g";
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // textBoxApellido
             // 

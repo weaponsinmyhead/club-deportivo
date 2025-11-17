@@ -148,5 +148,10 @@ namespace FormularioLogin
 		private void comboBoxTipo_SelectedIndexChanged_1(object sender, EventArgs e)
 		{
 		}
-	}
+
+        private void textBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

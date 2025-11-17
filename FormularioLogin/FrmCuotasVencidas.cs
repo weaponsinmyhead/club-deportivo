@@ -314,5 +314,10 @@ namespace FormularioLogin
             formInicio.Show();
             this.Close();
         }
+
+        private void panelFiltros_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

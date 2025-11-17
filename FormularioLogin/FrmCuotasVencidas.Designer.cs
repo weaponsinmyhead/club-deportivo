@@ -39,8 +39,8 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTitulo.Location = new System.Drawing.Point(233, 13);
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(233, 7);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(286, 26);
@@ -49,24 +49,25 @@
             // 
             // panelFiltros
             // 
-            this.panelFiltros.BackColor = System.Drawing.Color.LightYellow;
+            this.panelFiltros.BackColor = System.Drawing.Color.Crimson;
             this.panelFiltros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFiltros.Controls.Add(this.btnLimpiarFiltros);
             this.panelFiltros.Controls.Add(this.btnAplicarFiltros);
             this.panelFiltros.Controls.Add(this.chkMostrarInactivos);
             this.panelFiltros.Controls.Add(this.chkSoloActivos);
             this.panelFiltros.Controls.Add(this.lblFiltros);
-            this.panelFiltros.Location = new System.Drawing.Point(20, 46);
+            this.panelFiltros.Location = new System.Drawing.Point(20, 39);
             this.panelFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.panelFiltros.Name = "panelFiltros";
-            this.panelFiltros.Size = new System.Drawing.Size(1023, 53);
+            this.panelFiltros.Size = new System.Drawing.Size(749, 36);
             this.panelFiltros.TabIndex = 1;
+            this.panelFiltros.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFiltros_Paint);
             // 
             // btnLimpiarFiltros
             // 
             this.btnLimpiarFiltros.BackColor = System.Drawing.Color.LightGray;
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(520, 16);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(520, 5);
             this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(67, 23);
@@ -81,7 +82,7 @@
             this.btnAplicarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAplicarFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAplicarFiltros.ForeColor = System.Drawing.Color.White;
-            this.btnAplicarFiltros.Location = new System.Drawing.Point(433, 16);
+            this.btnAplicarFiltros.Location = new System.Drawing.Point(433, 5);
             this.btnAplicarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnAplicarFiltros.Name = "btnAplicarFiltros";
             this.btnAplicarFiltros.Size = new System.Drawing.Size(73, 23);
@@ -93,7 +94,7 @@
             // chkMostrarInactivos
             // 
             this.chkMostrarInactivos.AutoSize = true;
-            this.chkMostrarInactivos.Location = new System.Drawing.Point(213, 21);
+            this.chkMostrarInactivos.Location = new System.Drawing.Point(213, 10);
             this.chkMostrarInactivos.Margin = new System.Windows.Forms.Padding(2);
             this.chkMostrarInactivos.Name = "chkMostrarInactivos";
             this.chkMostrarInactivos.Size = new System.Drawing.Size(128, 17);
@@ -107,7 +108,7 @@
             this.chkSoloActivos.AutoSize = true;
             this.chkSoloActivos.Checked = true;
             this.chkSoloActivos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSoloActivos.Location = new System.Drawing.Point(87, 21);
+            this.chkSoloActivos.Location = new System.Drawing.Point(87, 10);
             this.chkSoloActivos.Margin = new System.Windows.Forms.Padding(2);
             this.chkSoloActivos.Name = "chkSoloActivos";
             this.chkSoloActivos.Size = new System.Drawing.Size(120, 17);
@@ -120,7 +121,7 @@
             // 
             this.lblFiltros.AutoSize = true;
             this.lblFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblFiltros.Location = new System.Drawing.Point(10, 21);
+            this.lblFiltros.Location = new System.Drawing.Point(10, 10);
             this.lblFiltros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltros.Name = "lblFiltros";
             this.lblFiltros.Size = new System.Drawing.Size(51, 15);
@@ -134,13 +135,13 @@
             this.dataGridViewCuotasVencidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCuotasVencidas.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCuotasVencidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCuotasVencidas.Location = new System.Drawing.Point(20, 110);
+            this.dataGridViewCuotasVencidas.Location = new System.Drawing.Point(20, 79);
             this.dataGridViewCuotasVencidas.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewCuotasVencidas.Name = "dataGridViewCuotasVencidas";
             this.dataGridViewCuotasVencidas.ReadOnly = true;
             this.dataGridViewCuotasVencidas.RowHeadersWidth = 62;
             this.dataGridViewCuotasVencidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCuotasVencidas.Size = new System.Drawing.Size(1023, 227);
+            this.dataGridViewCuotasVencidas.Size = new System.Drawing.Size(749, 170);
             this.dataGridViewCuotasVencidas.TabIndex = 2;
             // 
             // lblResumen
@@ -168,7 +169,7 @@
             // 
             this.lblTotalMonto.AutoSize = true;
             this.lblTotalMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblTotalMonto.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblTotalMonto.ForeColor = System.Drawing.Color.Black;
             this.lblTotalMonto.Location = new System.Drawing.Point(267, 8);
             this.lblTotalMonto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalMonto.Name = "lblTotalMonto";
@@ -178,9 +179,9 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.LightGray;
+            this.btnVolver.BackColor = System.Drawing.Color.White;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Location = new System.Drawing.Point(950, 380);
+            this.btnVolver.Location = new System.Drawing.Point(676, 293);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(93, 26);
@@ -195,10 +196,10 @@
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Location = new System.Drawing.Point(837, 380);
+            this.btnExportar.Location = new System.Drawing.Point(535, 293);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(100, 26);
+            this.btnExportar.Size = new System.Drawing.Size(128, 26);
             this.btnExportar.TabIndex = 7;
             this.btnExportar.Text = "Exportar a CSV";
             this.btnExportar.UseVisualStyleBackColor = false;
@@ -211,18 +212,18 @@
             this.panelResumen.Controls.Add(this.lblResumen);
             this.panelResumen.Controls.Add(this.lblTotalCuotas);
             this.panelResumen.Controls.Add(this.lblTotalMonto);
-            this.panelResumen.Location = new System.Drawing.Point(20, 346);
+            this.panelResumen.Location = new System.Drawing.Point(20, 254);
             this.panelResumen.Margin = new System.Windows.Forms.Padding(2);
             this.panelResumen.Name = "panelResumen";
-            this.panelResumen.Size = new System.Drawing.Size(1023, 30);
+            this.panelResumen.Size = new System.Drawing.Size(749, 30);
             this.panelResumen.TabIndex = 8;
             // 
             // FrmCuotasVencidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PapayaWhip;
-            this.ClientSize = new System.Drawing.Size(1072, 416);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.panelResumen);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.btnVolver);
